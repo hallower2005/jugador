@@ -50,6 +50,14 @@ public class JugadorDeFutbol {
     public void setEdad(int añosCumplidos) {
         edad = edad + añosCumplidos;
     }
+    
+    public void imprimirDetalles() {
+        System.out.println("Nombre: " + nombre + " | Edad: " + edad + " | ¿Ha sido campeon? " + esCampeonDeLiga);
+    }
+    
+    public String getDetalles() {
+        return "Nombre: " + nombre + " | Edad: " + edad + " | ¿Ha sido campeon? " + esCampeonDeLiga;
+    }
 }
 
     
