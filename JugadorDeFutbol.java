@@ -10,10 +10,10 @@ public class JugadorDeFutbol {
     /*
      * constructor de la clase
      */
-    public JugadorDeFutbol(String nombreJugador, int edadJugador, boolean esCampeon) {
+    public JugadorDeFutbol(String nombreJugador, int edadJugador) {
         nombre = nombreJugador;
         edad = edadJugador;
-        esCampeonDeLiga = esCampeon;
+        esCampeonDeLiga = true;
     }
     
     /*
@@ -33,8 +33,13 @@ public class JugadorDeFutbol {
     /*
      * informa si el jugdor es campeón o no
      */
-    public boolean getEsCampeonDeLiga() {
-        return esCampeonDeLiga;
+    public void esCampeonDeLigaEnEspanol() {
+        if(esCampeonDeLiga == true) {
+            System.out.println("Si");
+        }
+        else {
+            System.out.println("No");
+        }
     }
     
     /*
@@ -51,12 +56,31 @@ public class JugadorDeFutbol {
         edad = edad + añosCumplidos;
     }
     
+    /*
+     * determina si es campeon de liga
+     */
+    public void invertirValor() {
+        esCampeonDeLiga =! esCampeonDeLiga;
+    }
+    
     public void imprimirDetalles() {
-        System.out.println("Nombre: " + nombre + " | Edad: " + edad + " | ¿Ha sido campeon? " + esCampeonDeLiga);
+        if(esCampeonDeLiga == true) {
+            System.out.println("Nombre: " + nombre + " | Edad: " + edad + " | ¿Ha sido campeon? Si");
+        }
+        else {
+            System.out.println("Nombre: " + nombre + " | Edad: " + edad + " | ¿Ha sido campeon? No");
+        }
     }
     
     public String getDetalles() {
-        return "Nombre: " + nombre + " | Edad: " + edad + " | ¿Ha sido campeon? " + esCampeonDeLiga;
+        String valor;
+        if(esCampeonDeLiga == true) {
+            valor = "Si";
+        }
+        else {
+            valor = "No";
+        }
+        return "Nombre: " + nombre + " | Edad: " + edad + " | ¿Ha sido campeon? " + valor;
     }
 }
 
