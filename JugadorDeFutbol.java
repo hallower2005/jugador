@@ -33,13 +33,15 @@ public class JugadorDeFutbol {
     /*
      * informa si el jugdor es campeón o no
      */
-    public void esCampeonDeLigaEnEspanol() {
+    public String esCampeonDeLigaEnEspanol() {
+        String esCampeonDeLigaEnEspanol;
         if(esCampeonDeLiga == true) {
-            System.out.println("Si");
+            esCampeonDeLigaEnEspanol = "Si";
         }
         else {
-            System.out.println("No");
+            esCampeonDeLigaEnEspanol = "No";
         }
+        return esCampeonDeLigaEnEspanol;
     }
     
     /*
@@ -64,23 +66,11 @@ public class JugadorDeFutbol {
     }
     
     public void imprimirDetalles() {
-        if(esCampeonDeLiga == true) {
-            System.out.println("Nombre: " + nombre + " | Edad: " + edad + " | ¿Ha sido campeon? Si");
-        }
-        else {
-            System.out.println("Nombre: " + nombre + " | Edad: " + edad + " | ¿Ha sido campeon? No");
-        }
+        System.out.println("Nombre: " + nombre + " | Edad: " + edad + " | ¿Ha sido campeon? " + esCampeonDeLigaEnEspanol());
     }
     
     public String getDetalles() {
-        String valor;
-        if(esCampeonDeLiga == true) {
-            valor = "Si";
-        }
-        else {
-            valor = "No";
-        }
-        return "Nombre: " + nombre + " | Edad: " + edad + " | ¿Ha sido campeon? " + valor;
+        return "Nombre: " + nombre + " | Edad: " + edad + " | ¿Ha sido campeon? " + esCampeonDeLigaEnEspanol();
     }
 }
 
